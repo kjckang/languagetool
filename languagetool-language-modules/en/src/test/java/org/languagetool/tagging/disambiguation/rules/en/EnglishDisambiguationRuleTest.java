@@ -53,6 +53,9 @@ public class EnglishDisambiguationRuleTest {
 
   @Test
   public void testChunker() throws IOException {
+    TestTools.myAssert("Pickpockets often work in groups.",
+      "/[null]SENT_START Pickpockets/[pickpocket]NNS|Pickpockets/[pickpocket]VBZ  /[null]null often/[often]RB  /[null]null work/[work]JJ|work/[work]NN:UN|work/[work]VB|work/[work]VBP  /[null]null in/[in]IN|in/[in]NN|in/[in]RB|in/[in]RP  /[null]null groups/[group]NNS|groups/[group]VBZ ./[.]PCT",
+      tokenizer, sentenceTokenizer, tagger, disambiguator);
     TestTools.myAssert("I cannot have it.",
       "/[null]SENT_START I/[I]PRP|I/[I]PRP_S1S  /[null]null cannot/[can]MD  /[null]null have/[have]VB  /[null]null it/[it]PRP|it/[it]PRP_O3SN|it/[it]PRP_S3SN ./[.]PCT",
         tokenizer, sentenceTokenizer, tagger, disambiguator);
