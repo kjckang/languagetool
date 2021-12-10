@@ -47,7 +47,7 @@ public class EnglishTaggerTest {
     TestTools.testDictionary(tagger, new English());
   }
 
-
+  //Link to issue: https://github.com/kjckang/languagetool/tree/feature/missing_pos_for_long_5518
   @Test
   public void testTagger() throws IOException {
     TestTools.myAssert("This is a big house.",
